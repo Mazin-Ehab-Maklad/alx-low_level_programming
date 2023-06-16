@@ -1,8 +1,7 @@
 #include <stdio.h>
-/*
- * main
- * function
- * C
+/**
+ * main - Short description, single line
+ * Return: Description of the returned value
  */
 int main(void)
 {
