@@ -1,19 +1,22 @@
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
 #include <stdio.h>
+/* betty style doc for function main goes there */
 
 /**
- * main - Prints the alphabet.
- *
+ * main - Entry point
+ * Description: Print the alphabet in lowercase and uppercaase
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-char alp[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int i;
+	char ch;
 
-	for (i = 0; i < 52; i++)
-	{
-		putchar(alp[i]);
-	}
+	for (ch = 'a'; ch <= 'z'; ch++)
+		putchar(ch);
+	for (ch = 'A'; ch <= 'Z'; ch++)
+		putchar(ch);
 	putchar('\n');
 	return (0);
 }

@@ -1,38 +1,65 @@
 #include <stdio.h>
-#define LARGEST 10000000000
+#include <stdint.h>
+
+void print128(__int128 n);
 /**
- * main - main block
- * Description: Find and print the first 98 fib numbers starting with 1 and 2.
- * Numbers should be coma and space separated.
- * Return: 0
+ * main - main function
+ *
+ * Return: nothing
  */
+
 int main(void)
 {
-	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
-	unsigned long int hold1, hold2, hold3;
-	int count;
+	int counter = 2;
+	__int128 a, b, c;
 
-	printf("%lu, %lu, ", bk1, bk2);
-	for (count = 2; count < 98; count++)
+	a = 0;
+	b = 1;
+	c = a + b;
+
+	while (counter < 100)
 	{
-		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
+		counter++;
+		print128(c);
+		a = b;
+		b = c;
+		c = a + b;
+		if (counter < 100)
 		{
-			hold1 = (bk1 + bk2) / LARGEST;
-			hold2 = (bk1 + bk2) % LARGEST;
-			hold3 = fr1 + fr2 + hold1;
-			fr1 = fr2, fr2 = hold3;
-			bk1 = bk2, bk2 = hold2;
-			printf("%lu%010lu", fr2, bk2);
-		}
-		else
-		{
-			hold2 = bk1 + bk2;
-			bk1 = bk2, bk2 = hold2;
-			printf("%lu", bk2);
-		}
-		if (count != 97)
 			printf(", ");
+		}
 	}
 	printf("\n");
 	return (0);
+}
+/**
+ * print128 - prints a 128-bit integer to the console
+ *
+ * @n: the 128-bit integer value to print
+ *
+ * Description:
+ * This function takes a value of type __int128 and prints
+ * it to the console as a decimal integer.
+ * The function is designed to handle very large integers that
+ * cannot be represented by standard C data types such as long long.
+ */
+void print128(__int128 n)
+{
+	__int128 rev = 0;
+	int cnt = 0, i;
+
+	while (n)
+	{
+		rev *= 10;
+		rev += n % 10;
+		n /= 10;
+		cnt++;
+	}
+
+	while (cnt--)
+	{
+		i = rev % 10;
+		printf("%d", i);
+		rev /= 10;
+	}
 }

@@ -1,38 +1,49 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
- * times_table - function that prints the 9 times table, starting with 0
- *
- * Return: nothing.
+* printc - function
+*
+* @c: character to compare.
+* @i: tells me if it's the start of a newline
+* Return: void
+*
+*/
+
+void printc(int c, int i)
+{
+	char ch1, ch2;
+
+	ch2 = c % 10 + '0';
+	c /= 10;
+	ch1 = c % 10 + '0';
+	if (i)
+	{
+		_putchar(',');
+		if (ch1 == '0')
+			_putchar(' ');
+		_putchar(' ');
+		if (ch1 != '0')
+		{
+			_putchar(ch1);
+		}
+	}
+	_putchar(ch2);
+}
+
+/**
+ * times_table - main function
  */
 
 void times_table(void)
 {
-	int row, col;
-	int mult = 0;
+	int i, j;
 
-	for (row = 0; row < 10; row++)
+	for (i = 0; i <= 9; i++)
 	{
-		for (col = 0; col < 10; col++)
+		for (j = 0; j <= 9; j++)
 		{
-			mult = (row * col);
-			if (mult < 10)
-			{
-				if (col != 0)
-				{
-					_putchar(' ');
-					_putchar(' ');
-				}
-				_putchar(mult + '0');
-			}
-			else
-			{
-				_putchar(' ');
-				_putchar((mult / 10) + '0');
-				_putchar((mult % 10) + '0');
-			}
-			if (col != 9)
-				_putchar(',');
+			printc(i * j, j);
 		}
 		_putchar('\n');
 	}

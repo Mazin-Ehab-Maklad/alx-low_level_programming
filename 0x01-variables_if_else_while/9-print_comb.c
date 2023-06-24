@@ -1,17 +1,22 @@
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
 #include <stdio.h>
+/* betty style doc for function main goes there */
 
 /**
- * main - prints all possible combinations of single-digit numbers
+ * main - Entry point
+ * Description: Print all digits separated by ,
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n;
+	int ch;
 
-	for (n = 48; n < 58; n++)
+	for (ch = '0'; ch <= '9'; ch++)
 	{
-		putchar(n);
-		if (n != 57)
+		putchar(ch);
+		if (ch != '9')
 		{
 			putchar(',');
 			putchar(' ');

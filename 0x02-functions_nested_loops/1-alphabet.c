@@ -1,18 +1,17 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
-  * print_alphabet - Make the alphabet
-  *
-  * Return: void
-  */
-void print_alphabet(void)
+ * print_alphabet - function to print alphabet
+ *
+ */
+void  print_alphabet(void)
 {
-	char c;
+	char ch;
 
-	for (c = 'a'; c <= 'z'; c++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		_putchar(c);
+		_putchar(ch);
 	}
-
 	_putchar('\n');
 }

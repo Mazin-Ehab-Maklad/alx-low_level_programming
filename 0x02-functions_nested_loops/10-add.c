@@ -1,16 +1,15 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
- * add - function that adds two integers and returns the result.
- * @n1: input integer 1
- * @n2: input integer 2
- * Return: int.
+ * add - main function
+ *
+ * @i: character to add
+ * @j: character to add
+ * Return: the last digit of the number
+ *
  */
-
-int add(int n1, int n2)
+int add(int i, int j)
 {
-	int res;
-
-	res = n1 + n2;
-	return (res);
+	return (i + j);
 }

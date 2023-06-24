@@ -1,29 +1,45 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
- * jack_bauer -  function that prints every minute of the day of Jack Bauer
- * starting from 00:00 to 23:59.
- * Return: nothing.
- */
+* printc - function
+*
+* @c: character to compare.
+*
+* Return: void
+*
+*/
+void printc(int c)
+{
+	char ch1, ch2;
 
+	ch2 = c % 10 + '0';
+	c /= 10;
+	ch1 = c % 10 + '0';
+	_putchar(ch1);
+	_putchar(ch2);
+}
+
+/**
+ * jack_bauer - main function
+ *
+ *
+ * Return: void
+ *
+ */
 void jack_bauer(void)
 {
-	int x = 0;
-	int j = 0;
+	int h, m;
 
-	while (x <= 23)
+	for (h = 0; h <= 23; h++)
 	{
-		j = 0;
-		while (j <= 59)
+		for (m = 0; m <= 59; m++)
 		{
-			_putchar((x / 10) + '0');
-			_putchar((x % 10) + '0');
+			printc(h);
 			_putchar(':');
-			_putchar((j / 10) + '0');
-			_putchar((j % 10) + '0');
+			printc(m);
 			_putchar('\n');
-			j += 1;
 		}
-		x += 1;
 	}
+
 }

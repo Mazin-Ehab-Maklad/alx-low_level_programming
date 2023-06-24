@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
- * main - Short description, single line
- * Return: Description of the returned value
+ * main - Entry point
+ * print a phrase
+ * Return: always 0
  */
 int main(void)
 {

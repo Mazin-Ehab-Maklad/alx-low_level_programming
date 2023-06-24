@@ -1,18 +1,20 @@
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
 #include <stdio.h>
+/* betty style doc for function main goes there */
 
 /**
- * main - Prints numbers from 0 to 9.
- *
+ * main - Entry point
+ * Description: Print all digits
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i;
+	char ch;
 
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d", i);
-	}
+	for (ch = '0'; ch <= '9'; ch++)
+		putchar(ch);
 	putchar('\n');
 	return (0);
 }

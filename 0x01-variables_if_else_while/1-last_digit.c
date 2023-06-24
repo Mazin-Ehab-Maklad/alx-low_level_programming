@@ -1,36 +1,33 @@
 #include <stdlib.h>
 #include <time.h>
+/* more headers goes there */
 #include <stdio.h>
+/* betty style doc for function main goes there */
 
 /**
- * main - Prints the last digit of a randomly generated number
- * and whether it is greater than 5, less than 6, or 0.
- *
- * Return: Always 0.
+ * main - Entry point
+ * Description: Print the number and whether it's positive or negative
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n;
+	int n, last_digit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	if ((n % 10) > 5)
+	/* your code goes there */
+	last_digit = n % 10;
+	printf("Last digit of %d is %d and is ", n, last_digit);
+	if (last_digit > 5)
 	{
-		printf("Last digit of %d is %d and is greater than 5\n",
-			n, n % 10);
+		printf("greater than 5");
 	}
-	else if ((n % 10) < 6 && (n % 10) != 0)
+	else if (!last_digit)
 	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n",
-			n, n % 10);
+		printf("0");
 	}
 	else
-	{
-		printf("Last digit of %d is %d and is 0\n",
-			n, n % 10);
-	}
-
+		printf("less than 6 and not 0");
+	printf("\n");
 	return (0);
-
 }
