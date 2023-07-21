@@ -1,0 +1,36 @@
+      󰈚  No Name                                                                                                                   󰅖
+  1 #include <stdio.h>
+  2 
+  3 /**
+  4  *  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  NORMAL   󰈚 Empty                                                                                      󰉋  0x0A-argc_argv   Bot
+E32: No file name                                                                                                               
