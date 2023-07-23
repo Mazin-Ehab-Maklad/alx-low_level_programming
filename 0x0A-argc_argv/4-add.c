@@ -1,32 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <limits.h>
 
 /**
- *main - bla
- *@argc: bla
- *@argv: bla
- *Return: bla bla
+ * main - adds positive numbers
+ * @argc: argument count
+ * @argv: arguments
+ * Return: 0 (Success)
  */
-
 int main(int argc, char **argv)
 {
-	for (int i = 1; i < argc; i++)
+	int ans = 0;
+
+	while (--argc && ++argv)
 	{
-		if (!isdigit(*argv[i]))
+		ans += atoi(*argv);
+		while (**argv != '\0')
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(**argv))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			(*argv)++;
 		}
 	}
-	int sum = 0;
-
-	for (int i = 1; i < argc; i++)
-	{
-		sum += atoi(argv[i]);
-	}
-	printf("%i\n", sum);
+	printf("%i\n", ans);
 	return (0);
 }
-
